@@ -15,7 +15,7 @@ const SpotifyAuthRedirect: FC = () => {
   if (status === EStatus.error || userStatus === EStatus.error) {
     comp = <p>There was an Error</p>
   } else if (status === EStatus.success && userStatus === EStatus.success) {
-    comp = <Redirect to="/dashboard" />
+    comp = <Redirect to="/" />
   }
 
   return <div>{comp}</div>

@@ -3,7 +3,7 @@ import useFetch, { EStatus } from 'hooks/useFetch'
 import { getCurrentlyPlaying } from 'api/spotify'
 import PlayerInfo from 'components/PlayerInfo'
 
-const Dashboard: FC = () => {
+const Home: FC = () => {
   const { res, status } = useFetch(getCurrentlyPlaying)
 
   let content = <>...loading</>
@@ -15,4 +15,4 @@ const Dashboard: FC = () => {
   return <>{content}</>
 }
 
-export default Dashboard
+export default Home

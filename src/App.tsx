@@ -6,7 +6,7 @@ import { AuthContextProvider } from 'hooks/useAuth'
 
 const SpotifyLogin = lazy(() => import('pages/SpotifyLogin'))
 const SpotifyAuthRedirect = lazy(() => import('pages/SpotifyAuthRedirect'))
-const Dashboard = lazy(() => import('pages/Dashboard'))
+const Home = lazy(() => import('pages/Home'))
 const Logout = lazy(() => import('pages/Logout'))
 
 const App: FC = () => {
@@ -16,10 +16,10 @@ const App: FC = () => {
         <Layout>
           <Suspense fallback={<Loading />}>
             <Switch>
-              <Route exact path="/" component={SpotifyLogin} />
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={SpotifyLogin} />
               <Route path="/logout" component={Logout} />
               <Route path="/auth" component={SpotifyAuthRedirect} />
-              <Route path="/dashboard" component={Dashboard} />
             </Switch>
           </Suspense>
         </Layout>

@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  display: inline-block;
+}
+
+.button {
+  border: 0;
+  background: none;
+  outline: 0;
+  cursor: pointer;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+}
+
+.listWrapper {
+  position: fixed;
+  padding: 1.6rem;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #333;
+  display: none;
+  z-index: 10;
+
+  &.isOpened {
+    display: block;
+  }
+}

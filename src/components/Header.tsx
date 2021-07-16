@@ -1,9 +1,13 @@
 import { useCallback, FC } from 'react'
 import { useAuthContext } from 'hooks/useAuth'
-import { ReactComponent as Logo } from 'assets/logo.svg'
-import { useHistory } from 'react-router-dom'
+import { ReactComponent as LogoIcon } from 'assets/logo.svg'
+import { ReactComponent as MenuIcon } from 'assets/action-button.svg'
+import { useHistory, Link } from 'react-router-dom'
+import DropdownMenu from 'components/dropdown-menu/DropdownMenu'
 
 import styles from './Header.module.scss'
+
+const { Label, Item } = DropdownMenu
 
 const Header: FC = () => {
   const { user } = useAuthContext()
@@ -16,14 +20,31 @@ const Header: FC = () => {
   return (
     <div className={styles.header}>
       <span className={styles.logoWrapper}>
-        <Logo className={styles.logo} />
+        <LogoIcon className={styles.logo} />
         {user?.display_name}
       </span>
 
       {user && (
-        <button className={styles.logout} type="button" onClick={handleLogout}>
-          Logout
-        </button>
+        <DropdownMenu>
+          <Label>
+            <MenuIcon className={styles.menuIcon} />
+          </Label>
+          <Item>
+            <Link className={styles.button} to="/">
+              Home
+            </Link>
+          </Item>
+          <Item>
+            <Link className={styles.button} to="/library">
+              Play lists
+            </Link>
+          </Item>
+          <Item>
+            <button className={styles.button} type="button" onClick={handleLogout}>
+              Logout
+            </button>
+          </Item>
+        </DropdownMenu>
       )}
     </div>
   )

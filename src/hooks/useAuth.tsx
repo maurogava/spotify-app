@@ -126,7 +126,7 @@ export const useAuth = () => {
     const res = await userReq()
 
     if (!res) {
-      history.push('/')
+      history.push('/login')
       return
     }
 

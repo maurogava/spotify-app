@@ -35,3 +35,7 @@ export const shallowEqual = (obj1?: Obj, obj2?: Obj) => {
 
   return true
 }
+
+type Args = string | boolean
+
+export const cx = (...args: Args[]) => args.filter((el) => el).join(' ')

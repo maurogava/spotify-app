@@ -65,7 +65,7 @@ export const useFetch = <Res>(
             error: res.status,
           })
 
-          res.status === 401 && history.push('/')
+          res.status === 401 && history.push('/login')
         } else {
           setFetchResponse({
             res: response,

@@ -37,12 +37,12 @@ const SpotifyLogin: FC = () => {
   }, [setAuthData])
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <h1 className={styles.title}>Spotify Playlist Creator</h1>
       <button className={styles.button} type="button" onClick={beginLogin}>
-        Log in to spotify
+        Sign In
       </button>
-    </>
+    </div>
   )
 }
 
